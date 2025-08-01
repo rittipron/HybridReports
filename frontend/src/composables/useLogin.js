@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 
 export function useLogin(req) {
@@ -18,16 +18,6 @@ export function useLogin(req) {
       loading.value = false
     }
   }
-
-  // ถ้าอยากให้โหลดอัตโนมัติเมื่อ username หรือ password เปลี่ยน
-  watch(
-    () => [req.username.value, req.password.value],
-    ([newUsername, newPassword]) => {
-      if (newUsername && newPassword) {
-        loadUser()
-      }
-    }
-  )
 
   return { user, loading, error, reload: loadUser }
 }

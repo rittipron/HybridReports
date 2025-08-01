@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    user: null
+    user: null,
   }),
   actions: {
     async fetchUser() {
@@ -24,8 +24,7 @@ export const useAuthStore = defineStore('auth', {
         body: JSON.stringify({ email: username, password })
       })
       if (!res.ok) throw new Error('Login failed')
-      await this.fetchUser()
-      return this.user
+      this.user = await res.json()
     },
     async logout() {
       await fetch('http://localhost:3000/api/logout', {

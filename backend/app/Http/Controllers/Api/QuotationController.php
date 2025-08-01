@@ -34,7 +34,7 @@ class QuotationController extends Controller
             'items.*.price' => 'required|numeric|min:0',
         ]);
 
-        
+
 
         DB::beginTransaction();
         try {
@@ -78,9 +78,7 @@ class QuotationController extends Controller
     public function exportPdf($id)
     {
         $quotation = Quotation::with(['customer', 'items.product'])->findOrFail($id);
-
         $pdf = Pdf::loadView('pdf.quotation', compact('quotation'));
-        return $pdf->download("quotation_{$quotation->quotation_number}.pdf");
+        return $pdf->stream("quotation_{$quotation->quotation_number}.pdf");
     }
-
 }

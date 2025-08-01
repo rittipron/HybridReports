@@ -1,6 +1,6 @@
 [
-    { "name": "Product", "href": "#" },
-    { "name": "Features", "href": "#" },
-    { "name": "Marketplace", "href": "#" },
-    { "name": "Company", "href": "#" }
+  { "name": "Dashboard", "href": "#", "current": true },
+  { "name": "Customer", "href": "#", "current": false },
+  { "name": "Product", "href": "#", "current": false },
+  { "name": "Quotation", "href": "#", "current": false }
 ]

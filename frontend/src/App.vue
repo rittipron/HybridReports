@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import NavberLogin from '@/components/layout/NavberLoginComponent.vue'
+import Navber from '@/components/layout/NavbarComponent.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
@@ -9,8 +9,8 @@ const authStore = useAuthStore()
 
 <template>
   <div class="min-h-screen min-w-screen bg-white">
-    <div v-if="authStore.token"><NavberLogin /></div>
-    <div class="">
+    <div><Navber /></div>
+    <div class="p-10">
       <RouterView />
     </div>
   </div>

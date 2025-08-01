@@ -1,7 +1,9 @@
 {
     "home": "Home",
-    "about": "About",
     "login": "Login",
     "register": "Register",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "customer": "Customer",
+    "product": "Product",
+    "quotation": "Quotation"
 }
